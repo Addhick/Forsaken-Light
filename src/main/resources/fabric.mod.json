@@ -1,31 +1,31 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
-	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"id": "buriedservers",
+	"version": "0.0.0-Alpha.1",
+	"name": "Forsaken Light",
+	"description": "This mod is about adding new dimensions to the game that don't break or modify the ingame systems too much, it is vanilla friendly.",
 	"authors": [
-		"Me!"
+		"Donald Goff"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "",
+		"sources": ""
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
+	"icon": "assets/buriedservers/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
+			"com.buriedservers.ExampleMod"
 		],
 		"client": [
-			"com.example.ExampleModClient"
+			"com.buriedservers.ExampleModClient"
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
+		"buriedservers.mixins.json",
 		{
-			"config": "modid.client.mixins.json",
+			"config": "buriedservers.client.mixins.json",
 			"environment": "client"
 		}
 	],
