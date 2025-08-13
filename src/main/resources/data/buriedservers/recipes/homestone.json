@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "OAO",
+    "ALA",
+    "OAO"
+  ],
+  "key": {
+    "O": { "item": "minecraft:obsidian" },
+    "A": { "item": "minecraft:amethyst_shard" },
+    "L": { "item": "minecraft:lodestone" }
+  },
+  "result": {
+    "item": "buriedservers:homestone",
+    "count": 1
+  }
+}

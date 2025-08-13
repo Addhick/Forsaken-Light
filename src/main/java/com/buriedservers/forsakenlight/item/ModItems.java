@@ -16,16 +16,24 @@ public class ModItems {
     public static Item HOMESTONE;
 
     public static void registerItems() {
-        // IMPORTANT: bind the key into Settings before constructing the item
-        Item.Settings settings = new Item.Settings()
-                .registryKey(HOMESTONE_KEY) // <- this sets the id that Item's ctor expects
-                .maxCount(1);
 
-        HOMESTONE = new HomestoneItem(settings);
 
-        // Register using the same key
-        Registry.register(Registries.ITEM, HOMESTONE_KEY, HOMESTONE);
+        HOMESTONE = register("homestone", new Item.Settings().maxCount(1), HomestoneItem::new);
+        net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
+                .modifyEntriesEvent(net.minecraft.item.ItemGroups.TOOLS)
+                .register(entries -> entries.add(HOMESTONE));
 
         ForsakenLight.LOGGER.info("Registered Homestone item");
+    }
+
+    private static Item register(String name, Item.Settings baseSettings,
+                                 java.util.function.Function<Item.Settings, Item> factory) {
+        var key = net.minecraft.registry.RegistryKey.of(
+                net.minecraft.registry.RegistryKeys.ITEM,
+                net.minecraft.util.Identifier.of(ForsakenLight.MOD_ID, name)
+        );
+        var withKey = baseSettings.registryKey(key);
+        var item = factory.apply(withKey);
+        return net.minecraft.registry.Registry.register(net.minecraft.registry.Registries.ITEM, key, item);
     }
 }
