@@ -16,11 +16,9 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.buriedservers.ExampleMod"
-		],
-		"client": [
-			"com.buriedservers.ExampleModClient"
+			"com.buriedservers.forsakenlight.ForsakenLight"
 		]
+
 	},
 	"mixins": [
 		"buriedservers.mixins.json",
@@ -33,7 +31,7 @@
 		"fabricloader": ">=0.17.2",
 		"minecraft": "~1.21.5",
 		"java": ">=21",
-		"fabric-api": "*"
+		"fabric-api": "0.128.2+1.21.5"
 	},
 	"suggests": {
 		"another-mod": "*"
